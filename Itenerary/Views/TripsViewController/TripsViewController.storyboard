@@ -50,11 +50,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooh-P1-gIn">
+                                <rect key="frame" x="336" y="807" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GaI-mY-LUc"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="Ooh-P1-gIn" id="NoT-PQ-l33"/>
                         <outlet property="tableView" destination="6Pj-42-VAw" id="3Mj-YW-9jW"/>
                     </connections>
                 </viewController>
@@ -63,4 +71,7 @@
             <point key="canvasLocation" x="-20.289855072463769" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

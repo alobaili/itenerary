@@ -21,6 +21,7 @@
 		4BA70D4623CA54F4001D36CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D4523CA54F4001D36CA /* Theme.swift */; };
 		4BA70D4823CA55B8001D36CA /* FugazOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BA70D4723CA55B8001D36CA /* FugazOne-Regular.ttf */; };
 		4BA70D4A23CA5768001D36CA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA70D4923CA5768001D36CA /* Colors.xcassets */; };
+		4BA70D4C23CA5E59001D36CA /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D4B23CA5E59001D36CA /* UIButtonExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4BA70D4523CA54F4001D36CA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4BA70D4723CA55B8001D36CA /* FugazOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FugazOne-Regular.ttf"; sourceTree = "<group>"; };
 		4BA70D4923CA5768001D36CA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4BA70D4B23CA5E59001D36CA /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4BA70D4223CA52BA001D36CA /* UIViewExtentions.swift */,
+				4BA70D4B23CA5E59001D36CA /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				4BA70D3823CA38AB001D36CA /* Data.swift in Sources */,
 				4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */,
 				4BA70D4323CA52BA001D36CA /* UIViewExtentions.swift in Sources */,
+				4BA70D4C23CA5E59001D36CA /* UIButtonExtensions.swift in Sources */,
 				4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */,
 				4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */,
 				4BA70D4023CA4D13001D36CA /* TripsTableViewCell.swift in Sources */,
