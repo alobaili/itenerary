@@ -16,10 +16,7 @@ class TripsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cardView.layer.shadowOpacity = 1
-        cardView.layer.shadowOffset = .zero
-        cardView.layer.shadowColor = UIColor.darkGray.cgColor
-        cardView.layer.cornerRadius = 10
+        cardView.addShadowAndRoundedCorners()
     }
     
     func setup(tripModel: TripModel) {
