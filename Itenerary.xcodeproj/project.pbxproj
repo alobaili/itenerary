@@ -14,6 +14,8 @@
 		4BA70D3423CA35D3001D36CA /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3323CA35D3001D36CA /* TripModel.swift */; };
 		4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3523CA35E5001D36CA /* TripFunctions.swift */; };
 		4BA70D3823CA38AB001D36CA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3723CA38AB001D36CA /* Data.swift */; };
+		4BA70D3C23CA429D001D36CA /* TripsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */; };
+		4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4BA70D3323CA35D3001D36CA /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		4BA70D3523CA35E5001D36CA /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
 		4BA70D3723CA38AB001D36CA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripsViewController.storyboard; sourceTree = "<group>"; };
+		4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				4BA70D3123CA358B001D36CA /* Model */,
+				4BA70D3923CA425D001D36CA /* Views */,
 				4B4998A623C23C8D003C6D43 /* AppDelegate.swift */,
 				4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */,
 				4B4998AF23C23C8E003C6D43 /* Assets.xcassets */,
@@ -84,6 +89,23 @@
 				4BA70D3523CA35E5001D36CA /* TripFunctions.swift */,
 			);
 			path = Trip;
+			sourceTree = "<group>";
+		};
+		4BA70D3923CA425D001D36CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BA70D3A23CA426D001D36CA /* TripsViewController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BA70D3A23CA426D001D36CA /* TripsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */,
+				4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */,
+			);
+			path = TripsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4998B323C23C8E003C6D43 /* LaunchScreen.storyboard in Resources */,
+				4BA70D3C23CA429D001D36CA /* TripsViewController.storyboard in Resources */,
 				4B4998B023C23C8E003C6D43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +182,7 @@
 				4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */,
 				4BA70D3823CA38AB001D36CA /* Data.swift in Sources */,
 				4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */,
+				4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */,
 				4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */,
 				4BA70D3423CA35D3001D36CA /* TripModel.swift in Sources */,
 			);
