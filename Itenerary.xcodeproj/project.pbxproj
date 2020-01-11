@@ -16,6 +16,7 @@
 		4BA70D3823CA38AB001D36CA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3723CA38AB001D36CA /* Data.swift */; };
 		4BA70D3C23CA429D001D36CA /* TripsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */; };
 		4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */; };
+		4BA70D4023CA4D13001D36CA /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D3F23CA4D13001D36CA /* TripsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4BA70D3723CA38AB001D36CA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripsViewController.storyboard; sourceTree = "<group>"; };
 		4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		4BA70D3F23CA4D13001D36CA /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				4BA70D3B23CA429D001D36CA /* TripsViewController.storyboard */,
 				4BA70D3D23CA42BD001D36CA /* TripsViewController.swift */,
+				4BA70D3F23CA4D13001D36CA /* TripsTableViewCell.swift */,
 			);
 			path = TripsViewController;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */,
 				4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */,
 				4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */,
+				4BA70D4023CA4D13001D36CA /* TripsTableViewCell.swift in Sources */,
 				4BA70D3423CA35D3001D36CA /* TripModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
