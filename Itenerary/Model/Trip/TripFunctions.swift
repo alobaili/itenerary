@@ -15,7 +15,11 @@ class TripFunctions {
     }
     
     static func readTrips() {
-        
+        if Data.tripModels.isEmpty {
+            Data.tripModels.append(TripModel(title: "Trip to Bali!"))
+            Data.tripModels.append(TripModel(title: "Mexico"))
+            Data.tripModels.append(TripModel(title: "Russian Trip"))
+        }
     }
     
     static func updateTrip(_ tripModel: TripModel) {
