@@ -15,6 +15,10 @@ class AddTripViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    
+    /// A callback that the presenting view controller should implement in its `prepare(for:sender:)` function.
+    var doneSaving: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +30,11 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIButton) {
+        TripFunctions.createTrip(TripModel(title: tripTextField.text!))
+        
+        if let doneSaving = doneSaving {
+            doneSaving()
+        }
         dismiss(animated: true)
     }
     

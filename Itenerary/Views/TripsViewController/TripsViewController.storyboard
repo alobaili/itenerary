@@ -57,7 +57,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F8c-pm-Knw" kind="presentation" id="Ea9-ZZ-sOW"/>
+                                    <segue destination="F8c-pm-Knw" kind="presentation" identifier="toAddTripSegue" id="Ea9-ZZ-sOW"/>
                                 </connections>
                             </button>
                         </subviews>
