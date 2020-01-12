@@ -64,5 +64,7 @@
 	<array>
 		<string>FugazOne-Regular.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photos can be used to add more details to your trips.</string>
 </dict>
 </plist>

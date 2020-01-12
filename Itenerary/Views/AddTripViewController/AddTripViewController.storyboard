@@ -19,6 +19,10 @@
                                 <rect key="frame" x="20" y="44" width="374" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxn-QE-u07">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-1o-tSx">
                                         <rect key="frame" x="8" y="8" width="358" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -48,6 +52,16 @@
                                             <action selector="save:" destination="e5r-b5-bbo" eventType="touchUpInside" id="YTR-TZ-W2Y"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FI9-5o-SKm">
+                                        <rect key="frame" x="314" y="8" width="52" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="camera.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="e5r-b5-bbo" eventType="touchUpInside" id="ZrN-ir-rxZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -57,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="Tdl-Dd-KPf" id="RvA-aG-Gti"/>
+                        <outlet property="imageView" destination="Cxn-QE-u07" id="Rpv-Tt-gC4"/>
                         <outlet property="saveButton" destination="2Bm-58-hHa" id="oGZ-Qw-IIa"/>
                         <outlet property="titleLabel" destination="lNq-1o-tSx" id="Yjv-zq-G7D"/>
                         <outlet property="tripTextField" destination="IVb-Wi-Tpt" id="V2d-ea-Asj"/>
@@ -67,4 +82,8 @@
             <point key="canvasLocation" x="833.33333333333337" y="76.339285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+    </resources>
+    <color key="tintColor" name="Tint"/>
 </document>
