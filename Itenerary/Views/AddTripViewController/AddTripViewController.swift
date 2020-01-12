@@ -30,7 +30,25 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIButton) {
-        TripFunctions.createTrip(TripModel(title: tripTextField.text!))
+        tripTextField.rightViewMode = .never
+        
+        guard let newTripName = tripTextField.text, newTripName != "" else {
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+            imageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
+            imageView.layer.shadowOpacity = 1
+            imageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+            imageView.layer.shadowRadius = 2
+            imageView.tintColor = .yellow
+            imageView.contentMode = .scaleAspectFit
+            tripTextField.rightView = UIView()
+            tripTextField.rightView?.sizeToFit()
+            tripTextField.rightView?.addSubview(imageView)
+            imageView.center = .init(x: tripTextField.rightView!.center.x - 16, y: tripTextField.rightView!.center.y)
+            tripTextField.rightViewMode = .always
+            return
+        }
+        
+        TripFunctions.createTrip(TripModel(title: newTripName))
         
         if let doneSaving = doneSaving {
             doneSaving()
