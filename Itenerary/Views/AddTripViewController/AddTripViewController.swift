@@ -71,39 +71,37 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            PHPhotoLibrary.requestAuthorization { status in
-                switch status {
-                    case .authorized:
-                        DispatchQueue.main.async {
-                            self.presentImagePicker()
-                        }
-                    case .notDetermined:
-                        if status == .authorized {
-                            self.presentImagePicker()
-                        }
-                    case .restricted:
-                        DispatchQueue.main.async {
-                            let alertController = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and it cannot be used.", preferredStyle: .alert)
-                            let okAction = UIAlertAction(title: "OK", style: .default)
-                            alertController.addAction(okAction)
-                            self.present(alertController, animated: true)
-                        }
-                    case .denied:
-                        DispatchQueue.main.async {
-                            let alertController = UIAlertController(title: "Photo Library Access Denied", message: "Photo Library access was previously denied. Please update your Settings if you want to change this.", preferredStyle: .alert)
-                            let goToSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) { action in
-                                let url = URL(string: UIApplication.openSettingsURLString)!
-                                UIApplication.shared.open(url, options: [:])
-                            }
-                            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                            alertController.addAction(goToSettingsAction)
-                            alertController.addAction(cancelAction)
-                            self.present(alertController, animated: true)
-                        }
-                    @unknown default:
-                        break
+        PHPhotoLibrary.requestAuthorization { status in
+            switch status {
+                case .authorized:
+                    DispatchQueue.main.async {
+                        self.presentImagePicker()
                 }
+                case .notDetermined:
+                    if status == .authorized {
+                        self.presentImagePicker()
+                }
+                case .restricted:
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and it cannot be used.", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default)
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true)
+                }
+                case .denied:
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Photo Library Access Denied", message: "Photo Library access was previously denied. Please update your Settings if you want to change this.", preferredStyle: .alert)
+                        let goToSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) { action in
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                        alertController.addAction(goToSettingsAction)
+                        alertController.addAction(cancelAction)
+                        self.present(alertController, animated: true)
+                }
+                @unknown default:
+                    break
             }
         }
     }
