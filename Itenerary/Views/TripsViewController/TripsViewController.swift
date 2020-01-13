@@ -37,6 +37,7 @@ class TripsViewController: UIViewController {
             popupViewController.doneSaving = { [weak self] in
                 self?.tableView.reloadData()
             }
+            tripIndexToEdit = nil
         }
     }
     
@@ -89,7 +90,6 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: @escaping (Bool) -> Void) in
             self.tripIndexToEdit = indexPath.row
             self.performSegue(withIdentifier: "toAddTripSegue", sender: nil)
-            self.tripIndexToEdit = nil
             actionPerformed(true)
         }
         
