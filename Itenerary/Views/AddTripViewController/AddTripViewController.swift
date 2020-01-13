@@ -20,6 +20,7 @@ class AddTripViewController: UIViewController {
     
     /// A callback that the presenting view controller should implement in its `prepare(for:sender:)` function.
     var doneSaving: (() -> ())?
+    var tripIndexToEdit: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,15 @@ class AddTripViewController: UIViewController {
         titleLabel.layer.shadowOffset = .zero
         titleLabel.layer.shadowRadius = 3
         imageView.layer.cornerRadius = 10
+        
+        if let index = tripIndexToEdit {
+            let trip = Data.tripModels[index]
+            tripTextField.text = trip.title
+            imageView.image = trip.image
+        } else {
+            tripTextField.text = nil
+            imageView.image = nil
+        }
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -55,7 +65,11 @@ class AddTripViewController: UIViewController {
             return
         }
         
-        TripFunctions.createTrip(TripModel(title: newTripName, image: imageView.image))
+        if let index = tripIndexToEdit {
+            TripFunctions.updateTrip(at: index, title: newTripName, image: imageView.image)
+        } else {
+            TripFunctions.createTrip(TripModel(title: newTripName, image: imageView.image))
+        }
         
         if let doneSaving = doneSaving {
             doneSaving()
