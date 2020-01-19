@@ -3,15 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="FugazOne-Regular.ttf">
-            <string>FugazOne-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Activities View Controller-->
         <scene sceneID="c6z-Xd-LCd">
@@ -21,43 +15,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-h9-RsR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wht-Zn-6lT">
-                                        <rect key="frame" x="84" y="62" width="247" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="FugazOne-Regular" family="Fugaz One" pointSize="34"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctx-BB-BPt">
-                                        <rect key="frame" x="190" y="120" width="34" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Back"/>
-                                        <connections>
-                                            <action selector="back:" destination="OAH-Zl-aW8" eventType="touchUpInside" id="kco-nc-dXO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" name="Accent"/>
-                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Jy-mc-SJ8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JAi-Sg-wDw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Jy-mc-SJ8" firstAttribute="leading" secondItem="MN3-NT-gke" secondAttribute="leading" id="015-iu-Ep9"/>
+                            <constraint firstItem="JAi-Sg-wDw" firstAttribute="leading" secondItem="8YT-5p-bvc" secondAttribute="leading" id="0dQ-0C-ksB"/>
+                            <constraint firstAttribute="bottom" secondItem="JAi-Sg-wDw" secondAttribute="bottom" id="0va-xl-f2U"/>
+                            <constraint firstItem="2Jy-mc-SJ8" firstAttribute="top" secondItem="MN3-NT-gke" secondAttribute="top" id="1yk-pB-f6M"/>
+                            <constraint firstAttribute="bottom" secondItem="2Jy-mc-SJ8" secondAttribute="bottom" id="NGQ-iG-3nV"/>
+                            <constraint firstItem="JAi-Sg-wDw" firstAttribute="top" secondItem="8YT-5p-bvc" secondAttribute="top" id="Qzx-GQ-gBF"/>
+                            <constraint firstItem="2Jy-mc-SJ8" firstAttribute="trailing" secondItem="MN3-NT-gke" secondAttribute="trailing" id="VhP-G8-8LQ"/>
+                            <constraint firstItem="JAi-Sg-wDw" firstAttribute="trailing" secondItem="8YT-5p-bvc" secondAttribute="trailing" id="iyv-SK-ed2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8YT-5p-bvc"/>
                     </view>
                     <navigationItem key="navigationItem" id="nbb-Q0-hZb"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="2Jy-mc-SJ8" id="1Gg-zk-qBi"/>
+                        <outlet property="tableView" destination="JAi-Sg-wDw" id="EtK-Rm-rLM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Din-yi-Pfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.8985507246377" y="102.45535714285714"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="Accent">
-            <color red="0.14900000393390656" green="0.20000000298023224" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
     <color key="tintColor" name="Tint"/>
 </document>

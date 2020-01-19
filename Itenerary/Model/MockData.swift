@@ -29,6 +29,13 @@ class MockData {
     }
     
     static func createMockActivityModelData(sectionTitle: String) -> [ActivityModel] {
-        return [ActivityModel]()
+        var activityModels = [ActivityModel]()
+        activityModels.append(ActivityModel(title: "SLC", subtitle: "Bla", activityType: .flight))
+        activityModels.append(ActivityModel(title: "LAX", subtitle: "Bla", activityType: .flight))
+        activityModels.append(ActivityModel(title: "Bintang Kuta Hotel Checkin", subtitle: "Bla", activityType: .hotel))
+        activityModels.append(ActivityModel(title: "Pick up rental", subtitle: "Bla", activityType: .auto))
+        activityModels.append(ActivityModel(title: "Island Excusion", subtitle: "Bla", activityType: .excursion))
+        activityModels.append(ActivityModel(title: "Dinner", subtitle: "Bla", activityType: .food))
+        return activityModels
     }
 }

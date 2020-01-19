@@ -14,13 +14,26 @@ class TripFunctions {
         Data.tripModels.append(tripModel)
     }
     
-    static func readTrips(completion: @escaping () -> ()) {
+    static func readTrips(completion: @escaping () -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             if Data.tripModels.isEmpty {
                 Data.tripModels = MockData.createMockTripModelData()
+                for index in Data.tripModels.enumerated() {
+                    Data.tripModels[index.offset].dayModels = MockData.createMockDayModelData()
+                }
             }
             DispatchQueue.main.async {
                 completion()
+            }
+        }
+    }
+    
+    static func readTrip(by id: UUID, completion: @escaping (TripModel?) -> Void) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let trip = Data.tripModels.first(where: { $0.id == id })
+            
+            DispatchQueue.main.async {
+                completion(trip)
             }
         }
     }
