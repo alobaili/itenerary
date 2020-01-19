@@ -28,6 +28,10 @@
 		4BA70D5623CB9B17001D36CA /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA70D5523CB9B17001D36CA /* AppButton.swift */; };
 		4BB53E7523D39B5600EC3CC0 /* ActivitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53E7423D39B5600EC3CC0 /* ActivitiesViewController.storyboard */; };
 		4BB53E7723D39B7E00EC3CC0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7623D39B7E00EC3CC0 /* ActivitiesViewController.swift */; };
+		4BB53E7A23D3A79F00EC3CC0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7923D3A79F00EC3CC0 /* DayModel.swift */; };
+		4BB53E7E23D3A87A00EC3CC0 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */; };
+		4BB53E8023D3A95900EC3CC0 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */; };
+		4BB53E8323D3A9F900EC3CC0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E8223D3A9F900EC3CC0 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		4BA70D5523CB9B17001D36CA /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		4BB53E7423D39B5600EC3CC0 /* ActivitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesViewController.storyboard; sourceTree = "<group>"; };
 		4BB53E7623D39B7E00EC3CC0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		4BB53E7923D3A79F00EC3CC0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		4BB53E8223D3A9F900EC3CC0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 			children = (
 				4BA70D3723CA38AB001D36CA /* Data.swift */,
 				4BA70D3223CA35A3001D36CA /* Trip */,
+				4BB53E7823D3A78600EC3CC0 /* Day */,
+				4BB53E7C23D3A85E00EC3CC0 /* Activity */,
+				4BB53E8223D3A9F900EC3CC0 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +193,23 @@
 				4BB53E7623D39B7E00EC3CC0 /* ActivitiesViewController.swift */,
 			);
 			path = ActivitiesViewController;
+			sourceTree = "<group>";
+		};
+		4BB53E7823D3A78600EC3CC0 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53E7923D3A79F00EC3CC0 /* DayModel.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		4BB53E7C23D3A85E00EC3CC0 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */,
+				4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,11 +293,15 @@
 				4BB53E7723D39B7E00EC3CC0 /* ActivitiesViewController.swift in Sources */,
 				4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */,
 				4BA70D4323CA52BA001D36CA /* UIViewExtentions.swift in Sources */,
+				4BB53E7A23D3A79F00EC3CC0 /* DayModel.swift in Sources */,
 				4BA70D4C23CA5E59001D36CA /* UIButtonExtensions.swift in Sources */,
 				4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */,
 				4BA70D5123CB9368001D36CA /* AddTripViewController.swift in Sources */,
 				4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */,
+				4BB53E8023D3A95900EC3CC0 /* ActivityType.swift in Sources */,
 				4BA70D5623CB9B17001D36CA /* AppButton.swift in Sources */,
+				4BB53E8323D3A9F900EC3CC0 /* MockData.swift in Sources */,
+				4BB53E7E23D3A87A00EC3CC0 /* ActivityModel.swift in Sources */,
 				4BA70D5423CB9956001D36CA /* PopupView.swift in Sources */,
 				4BA70D4023CA4D13001D36CA /* TripsTableViewCell.swift in Sources */,
 				4BA70D3423CA35D3001D36CA /* TripModel.swift in Sources */,
