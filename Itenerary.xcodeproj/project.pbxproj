@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */; };
 		4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A623C23C8D003C6D43 /* AppDelegate.swift */; };
 		4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */; };
 		4B4998B023C23C8E003C6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4998AF23C23C8E003C6D43 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4B4998A323C23C8D003C6D43 /* Itenerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itenerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4998A623C23C8D003C6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				4BA70D3723CA38AB001D36CA /* Data.swift */,
+				4BB53E8223D3A9F900EC3CC0 /* MockData.swift */,
 				4BA70D3223CA35A3001D36CA /* Trip */,
 				4BB53E7823D3A78600EC3CC0 /* Day */,
 				4BB53E7C23D3A85E00EC3CC0 /* Activity */,
-				4BB53E8223D3A9F900EC3CC0 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +193,7 @@
 			children = (
 				4BB53E7423D39B5600EC3CC0 /* ActivitiesViewController.storyboard */,
 				4BB53E7623D39B7E00EC3CC0 /* ActivitiesViewController.swift */,
+				4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */,
 			);
 			path = ActivitiesViewController;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				4BA70D4623CA54F4001D36CA /* Theme.swift in Sources */,
 				4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */,
+				4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */,
 				4BA70D3823CA38AB001D36CA /* Data.swift in Sources */,
 				4BB53E7723D39B7E00EC3CC0 /* ActivitiesViewController.swift in Sources */,
 				4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */,

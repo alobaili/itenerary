@@ -6,7 +6,7 @@
 //  Copyright © 2020 Abdulaziz AlObaili. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MockData {
     
@@ -15,6 +15,7 @@ class MockData {
         mockTrips.append(TripModel(title: "Trip to Bali!"))
         mockTrips.append(TripModel(title: "Mexico"))
         mockTrips.append(TripModel(title: "Russian Trip"))
+        mockTrips.append(TripModel(title: "Riyadh", image: UIImage(named: "riyadh")))
         return mockTrips
     }
     
