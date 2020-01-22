@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1A607623D8BF3E00C2DA70 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A607523D8BF3E00C2DA70 /* ActivityTableViewCell.swift */; };
 		4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */; };
 		4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A623C23C8D003C6D43 /* AppDelegate.swift */; };
 		4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1A607523D8BF3E00C2DA70 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4B4998A323C23C8D003C6D43 /* Itenerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itenerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4998A623C23C8D003C6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				4BB53E7423D39B5600EC3CC0 /* ActivitiesViewController.storyboard */,
 				4BB53E7623D39B7E00EC3CC0 /* ActivitiesViewController.swift */,
 				4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */,
+				4B1A607523D8BF3E00C2DA70 /* ActivityTableViewCell.swift */,
 			);
 			path = ActivitiesViewController;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				4BA70D4623CA54F4001D36CA /* Theme.swift in Sources */,
 				4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */,
+				4B1A607623D8BF3E00C2DA70 /* ActivityTableViewCell.swift in Sources */,
 				4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */,
 				4BA70D3823CA38AB001D36CA /* Data.swift in Sources */,
 				4BB53E7723D39B7E00EC3CC0 /* ActivitiesViewController.swift in Sources */,
