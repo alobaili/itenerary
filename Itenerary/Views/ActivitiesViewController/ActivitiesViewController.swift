@@ -15,10 +15,13 @@ class ActivitiesViewController: UIViewController {
     
     var tripID: UUID!
     var tripModel: TripModel?
+	var tripTitle = ""
     var sectionHeaderHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		title = tripTitle
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -28,7 +31,6 @@ class ActivitiesViewController: UIViewController {
             self.tripModel = tripModel
             
             guard let tripModel = tripModel else { return }
-            self.title = tripModel.title
             self.backgroundImageView.image = tripModel.image
             self.tableView.reloadData()
         }
