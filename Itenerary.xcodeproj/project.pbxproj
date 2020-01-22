@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B1A607623D8BF3E00C2DA70 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A607523D8BF3E00C2DA70 /* ActivityTableViewCell.swift */; };
+		4B1A607823D8CFA300C2DA70 /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A607723D8CFA300C2DA70 /* UITableViewCellExtensions.swift */; };
 		4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */; };
 		4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A623C23C8D003C6D43 /* AppDelegate.swift */; };
 		4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4B1A607523D8BF3E00C2DA70 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		4B1A607723D8CFA300C2DA70 /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4B4998A323C23C8D003C6D43 /* Itenerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itenerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4998A623C23C8D003C6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				4BA70D4223CA52BA001D36CA /* UIViewExtentions.swift */,
 				4BA70D4B23CA5E59001D36CA /* UIButtonExtensions.swift */,
+				4B1A607723D8CFA300C2DA70 /* UITableViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				4BA70D5623CB9B17001D36CA /* AppButton.swift in Sources */,
 				4BB53E8323D3A9F900EC3CC0 /* MockData.swift in Sources */,
 				4BB53E7E23D3A87A00EC3CC0 /* ActivityModel.swift in Sources */,
+				4B1A607823D8CFA300C2DA70 /* UITableViewCellExtensions.swift in Sources */,
 				4BA70D5423CB9956001D36CA /* PopupView.swift in Sources */,
 				4BA70D4023CA4D13001D36CA /* TripsTableViewCell.swift in Sources */,
 				4BA70D3423CA35D3001D36CA /* TripModel.swift in Sources */,
