@@ -25,10 +25,6 @@ class AddDayViewController: UIViewController {
 		super.viewDidLoad()
 		
 		titleLabel.font = UIFont(name: Theme.mainFontName, size: 24)
-		titleLabel.layer.shadowOpacity = 1
-		titleLabel.layer.shadowColor = UIColor.white.cgColor
-		titleLabel.layer.shadowOffset = .zero
-		titleLabel.layer.shadowRadius = 3
 	}
 	
 	@IBAction func cancel(_ sender: UIButton) {
@@ -36,23 +32,7 @@ class AddDayViewController: UIViewController {
 	}
 	
 	@IBAction func save(_ sender: UIButton) {
-		titleTextField.rightViewMode = .never
-		
-		guard let newTripName = titleTextField.text, newTripName != "" else {
-			let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-			imageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
-			imageView.layer.shadowOpacity = 1
-			imageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-			imageView.layer.shadowRadius = 2
-			imageView.tintColor = .yellow
-			imageView.contentMode = .scaleAspectFit
-			titleTextField.rightView = UIView()
-			titleTextField.rightView?.sizeToFit()
-			titleTextField.rightView?.addSubview(imageView)
-			imageView.center = .init(x: titleTextField.rightView!.center.x - 16, y: titleTextField.rightView!.center.y)
-			titleTextField.rightViewMode = .always
-			return
-		}
+		guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
 		
 //		if let index = tripIndexToEdit {
 //			TripFunctions.updateTrip(at: index, title: newTripName, image: imageView.image)
