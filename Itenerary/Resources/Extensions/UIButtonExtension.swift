@@ -1,5 +1,5 @@
 //
-//  UIButtonExtensions.swift
+//  UIButtonExtension.swift
 //  Itenerary
 //
 //  Created by Abdulaziz AlObaili on 11/01/2020.

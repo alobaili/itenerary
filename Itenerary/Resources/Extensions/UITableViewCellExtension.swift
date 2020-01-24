@@ -1,5 +1,5 @@
 //
-//  UITableViewCellExtensions.swift
+//  UITableViewCellExtension.swift
 //  Itenerary
 //
 //  Created by Abdulaziz AlObaili on 22/01/2020.
