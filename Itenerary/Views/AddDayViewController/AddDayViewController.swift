@@ -20,6 +20,7 @@ class AddDayViewController: UIViewController {
 	/// A callback that the presenting view controller should implement in its `prepare(for:sender:)` function.
 	var doneSaving: ((DayModel) -> ())?
 	var tripIndex: Int!
+	var tripModel: TripModel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -32,7 +33,13 @@ class AddDayViewController: UIViewController {
 	}
 	
 	@IBAction func save(_ sender: UIButton) {
-//		guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
+		if alreadyExists(datePicker.date) {
+			let alertController = UIAlertController(title: "Day Already Exists", message: "Choose another date.", preferredStyle: .alert)
+			let okAction = UIAlertAction(title: "OK", style: .cancel)
+			alertController.addAction(okAction)
+			present(alertController, animated: true)
+			return
+		}
 		
 		let dayModel = DayModel(title: datePicker.date, subtitle: subtitleTextField.text ?? "", data: nil)
 		DayFunctions.createDay(dayModel, forTripAt: tripIndex)
@@ -41,6 +48,10 @@ class AddDayViewController: UIViewController {
 			doneSaving(dayModel)
 		}
 		dismiss(animated: true)
+	}
+	
+	func alreadyExists(_ date: Date) -> Bool {
+		return tripModel.dayModels.contains { $0.title.mediumDate == date.mediumDate }
 	}
 	
 	@IBAction func done(_ sender: UITextField) {

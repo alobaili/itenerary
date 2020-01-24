@@ -65,6 +65,7 @@ class ActivitiesViewController: UIViewController {
 	
 	func handleAddDay(action: UIAlertAction) {
 		let vc = AddDayViewController.getInstance() as! AddDayViewController
+		vc.tripModel = tripModel
 		vc.tripIndex = Data.tripModels.firstIndex { $0.id == tripID }
 		vc.doneSaving = { [weak self] dayModel in
 			self?.tripModel?.dayModels.append(dayModel)
