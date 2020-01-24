@@ -67,8 +67,8 @@ class ActivitiesViewController: UIViewController {
 		let vc = AddDayViewController.getInstance() as! AddDayViewController
 		vc.tripIndex = Data.tripModels.firstIndex { $0.id == tripID }
 		vc.doneSaving = { [weak self] dayModel in
-			let index = [self?.tripModel?.dayModels.count ?? 0]
 			self?.tripModel?.dayModels.append(dayModel)
+			let index = [self?.tripModel?.dayModels.firstIndex(of: dayModel) ?? 0]
 			self?.tableView.insertSections(IndexSet(index), with: .automatic)
 		}
 		present(vc, animated: true)
