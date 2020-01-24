@@ -133,7 +133,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-qd-Yyr" customClass="AppButton" customModule="Itenerary" customModuleProvider="target">
-                                <rect key="frame" x="338" y="806" width="56" height="56"/>
+                                <rect key="frame" x="338" y="786" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="UNN-HX-57d"/>
                                     <constraint firstAttribute="width" constant="56" id="h6x-iS-uoT"/>
@@ -153,7 +153,7 @@
                             <constraint firstItem="JAi-Sg-wDw" firstAttribute="leading" secondItem="8YT-5p-bvc" secondAttribute="leading" id="0dQ-0C-ksB"/>
                             <constraint firstAttribute="bottom" secondItem="JAi-Sg-wDw" secondAttribute="bottom" id="0va-xl-f2U"/>
                             <constraint firstItem="2Jy-mc-SJ8" firstAttribute="top" secondItem="MN3-NT-gke" secondAttribute="top" id="1yk-pB-f6M"/>
-                            <constraint firstItem="8YT-5p-bvc" firstAttribute="bottom" secondItem="o0H-qd-Yyr" secondAttribute="bottom" id="Bi3-D7-FMV"/>
+                            <constraint firstItem="8YT-5p-bvc" firstAttribute="bottom" secondItem="o0H-qd-Yyr" secondAttribute="bottom" constant="20" id="Bi3-D7-FMV"/>
                             <constraint firstAttribute="bottom" secondItem="2Jy-mc-SJ8" secondAttribute="bottom" id="NGQ-iG-3nV"/>
                             <constraint firstItem="8YT-5p-bvc" firstAttribute="trailing" secondItem="o0H-qd-Yyr" secondAttribute="trailing" constant="20" id="P22-sr-YrO"/>
                             <constraint firstItem="JAi-Sg-wDw" firstAttribute="top" secondItem="8YT-5p-bvc" secondAttribute="top" id="Qzx-GQ-gBF"/>

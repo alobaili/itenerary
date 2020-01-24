@@ -40,6 +40,7 @@
 		4BB53E7E23D3A87A00EC3CC0 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */; };
 		4BB53E8023D3A95900EC3CC0 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */; };
 		4BB53E8323D3A9F900EC3CC0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53E8223D3A9F900EC3CC0 /* MockData.swift */; };
+		4BF48E4423DB7F4500C033B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF48E4323DB7F4500C033B6 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		4BB53E8223D3A9F900EC3CC0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		4BF48E4323DB7F4500C033B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		4BA70D4123CA528F001D36CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4BF48E4323DB7F4500C033B6 /* DateExtension.swift */,
 				4BA70D4B23CA5E59001D36CA /* UIButtonExtension.swift */,
 				4B1A607723D8CFA300C2DA70 /* UITableViewCellExtension.swift */,
 				4B1A608723DB558D00C2DA70 /* UITextFieldExtension.swift */,
@@ -325,6 +328,7 @@
 				4B1A608423DB4A1600C2DA70 /* AddDayViewController.swift in Sources */,
 				4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */,
 				4B1A607623D8BF3E00C2DA70 /* ActivityTableViewCell.swift in Sources */,
+				4BF48E4423DB7F4500C033B6 /* DateExtension.swift in Sources */,
 				4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */,
 				4BA70D3823CA38AB001D36CA /* Data.swift in Sources */,
 				4BB53E7723D39B7E00EC3CC0 /* ActivitiesViewController.swift in Sources */,

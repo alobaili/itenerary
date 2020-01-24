@@ -69,7 +69,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooh-P1-gIn">
-                                <rect key="frame" x="338" y="718" width="56" height="56"/>
+                                <rect key="frame" x="338" y="698" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="bRs-YZ-zD1"/>
                                     <constraint firstAttribute="width" constant="56" id="dsK-Y3-RLo"/>
@@ -85,7 +85,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GaI-mY-LUc" firstAttribute="trailing" secondItem="Ooh-P1-gIn" secondAttribute="trailing" constant="20" id="HgI-It-DpJ"/>
-                            <constraint firstItem="Ooh-P1-gIn" firstAttribute="bottom" secondItem="GaI-mY-LUc" secondAttribute="bottom" id="cYF-Uk-j8Y"/>
+                            <constraint firstItem="Ooh-P1-gIn" firstAttribute="bottom" secondItem="GaI-mY-LUc" secondAttribute="bottom" constant="-20" id="cYF-Uk-j8Y"/>
                             <constraint firstItem="6Pj-42-VAw" firstAttribute="top" secondItem="GaI-mY-LUc" secondAttribute="top" id="ifB-Gb-FnO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="6Pj-42-VAw" secondAttribute="bottom" id="kJe-x5-Ni7"/>
                             <constraint firstItem="6Pj-42-VAw" firstAttribute="trailing" secondItem="GaI-mY-LUc" secondAttribute="trailing" id="kgv-XL-Kd3"/>
