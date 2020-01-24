@@ -12,7 +12,8 @@ class ActivitiesViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
+	@IBOutlet weak var addButton: UIButton!
+	
     var tripID: UUID!
     var tripModel: TripModel?
 	var tripTitle = ""
@@ -22,6 +23,7 @@ class ActivitiesViewController: UIViewController {
         super.viewDidLoad()
 		
 		title = tripTitle
+		addButton.createFloatingActionButton()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -41,6 +43,24 @@ class ActivitiesViewController: UIViewController {
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true)
     }
+	
+	@IBAction func addAction(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "Which would you like to add?", message: nil, preferredStyle: .actionSheet)
+		let dayAction = UIAlertAction(title: "Day", style: .default) { action in
+			print("Add new day")
+		}
+		let activityAction = UIAlertAction(title: "Activity", style: .default) { action in
+			print("Add new activity")
+		}
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+		alertController.addAction(dayAction)
+		alertController.addAction(activityAction)
+		alertController.addAction(cancelAction)
+		alertController.popoverPresentationController?.sourceView = sender
+		alertController.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: sender.bounds.height)
+		present(alertController, animated: true)
+	}
+	
     
 }
 

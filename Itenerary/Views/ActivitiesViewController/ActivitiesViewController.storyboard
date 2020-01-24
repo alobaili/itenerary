@@ -127,6 +127,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-qd-Yyr" customClass="AppButton" customModule="Itenerary" customModuleProvider="target">
+                                <rect key="frame" x="338" y="806" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="UNN-HX-57d"/>
+                                    <constraint firstAttribute="width" constant="56" id="h6x-iS-uoT"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAction:" destination="OAH-Zl-aW8" eventType="touchUpInside" id="cPf-JH-xJu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -134,7 +148,9 @@
                             <constraint firstItem="JAi-Sg-wDw" firstAttribute="leading" secondItem="8YT-5p-bvc" secondAttribute="leading" id="0dQ-0C-ksB"/>
                             <constraint firstAttribute="bottom" secondItem="JAi-Sg-wDw" secondAttribute="bottom" id="0va-xl-f2U"/>
                             <constraint firstItem="2Jy-mc-SJ8" firstAttribute="top" secondItem="MN3-NT-gke" secondAttribute="top" id="1yk-pB-f6M"/>
+                            <constraint firstItem="8YT-5p-bvc" firstAttribute="bottom" secondItem="o0H-qd-Yyr" secondAttribute="bottom" id="Bi3-D7-FMV"/>
                             <constraint firstAttribute="bottom" secondItem="2Jy-mc-SJ8" secondAttribute="bottom" id="NGQ-iG-3nV"/>
+                            <constraint firstItem="8YT-5p-bvc" firstAttribute="trailing" secondItem="o0H-qd-Yyr" secondAttribute="trailing" constant="20" id="P22-sr-YrO"/>
                             <constraint firstItem="JAi-Sg-wDw" firstAttribute="top" secondItem="8YT-5p-bvc" secondAttribute="top" id="Qzx-GQ-gBF"/>
                             <constraint firstItem="2Jy-mc-SJ8" firstAttribute="trailing" secondItem="MN3-NT-gke" secondAttribute="trailing" id="VhP-G8-8LQ"/>
                             <constraint firstItem="JAi-Sg-wDw" firstAttribute="trailing" secondItem="8YT-5p-bvc" secondAttribute="trailing" id="iyv-SK-ed2"/>
@@ -143,6 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nbb-Q0-hZb"/>
                     <connections>
+                        <outlet property="addButton" destination="o0H-qd-Yyr" id="5s9-AJ-rLc"/>
                         <outlet property="backgroundImageView" destination="2Jy-mc-SJ8" id="1Gg-zk-qBi"/>
                         <outlet property="tableView" destination="JAi-Sg-wDw" id="EtK-Rm-rLM"/>
                     </connections>
@@ -153,6 +170,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <namedColor name="Accent">
             <color red="0.14900000393390656" green="0.20000000298023224" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
