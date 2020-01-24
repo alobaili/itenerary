@@ -29,7 +29,7 @@ class TripsViewController: UIViewController {
             if !Data.tripModels.isEmpty {
                 if !UserDefaults.standard.bool(forKey: self.seenHelpView) {
                     self.view.addSubview(self.helpView)
-                    self.helpView.frame = self.view.frame
+                    self.helpView.frame = self.view.bounds
                 }
             }
         }
