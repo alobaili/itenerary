@@ -13,6 +13,7 @@
 		4B1A608423DB4A1600C2DA70 /* AddDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608323DB4A1600C2DA70 /* AddDayViewController.swift */; };
 		4B1A608623DB51D400C2DA70 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608523DB51D400C2DA70 /* UIViewControllerExtension.swift */; };
 		4B1A608823DB558D00C2DA70 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608723DB558D00C2DA70 /* UITextFieldExtension.swift */; };
+		4B1A608A23DB6F2A00C2DA70 /* DayFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608923DB6F2A00C2DA70 /* DayFunctions.swift */; };
 		4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */; };
 		4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A623C23C8D003C6D43 /* AppDelegate.swift */; };
 		4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		4B1A608323DB4A1600C2DA70 /* AddDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayViewController.swift; sourceTree = "<group>"; };
 		4B1A608523DB51D400C2DA70 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4B1A608723DB558D00C2DA70 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		4B1A608923DB6F2A00C2DA70 /* DayFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFunctions.swift; sourceTree = "<group>"; };
 		4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4B4998A323C23C8D003C6D43 /* Itenerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itenerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4998A623C23C8D003C6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				4BB53E7923D3A79F00EC3CC0 /* DayModel.swift */,
+				4B1A608923DB6F2A00C2DA70 /* DayFunctions.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				4BB53E7A23D3A79F00EC3CC0 /* DayModel.swift in Sources */,
 				4BA70D4C23CA5E59001D36CA /* UIButtonExtension.swift in Sources */,
 				4BA70D3E23CA42BD001D36CA /* TripsViewController.swift in Sources */,
+				4B1A608A23DB6F2A00C2DA70 /* DayFunctions.swift in Sources */,
 				4BA70D5123CB9368001D36CA /* AddTripViewController.swift in Sources */,
 				4BA70D3623CA35E5001D36CA /* TripFunctions.swift in Sources */,
 				4BB53E8023D3A95900EC3CC0 /* ActivityType.swift in Sources */,

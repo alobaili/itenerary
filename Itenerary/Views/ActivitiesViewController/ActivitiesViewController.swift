@@ -18,8 +18,8 @@ class ActivitiesViewController: UIViewController {
     var tripModel: TripModel?
 	var tripTitle = ""
     var sectionHeaderHeight: CGFloat = 0
-
-    override func viewDidLoad() {
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		title = tripTitle
@@ -28,17 +28,21 @@ class ActivitiesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        TripFunctions.readTrip(by: tripID) { [weak self] tripModel in
-            guard let self = self else { return }
-            self.tripModel = tripModel
-            
-            guard let tripModel = tripModel else { return }
-            self.backgroundImageView.image = tripModel.image
-            self.tableView.reloadData()
-        }
+		updateTableViewWithTripData()
         
         sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.bounds.height ?? 0
     }
+	
+	fileprivate func updateTableViewWithTripData() {
+		TripFunctions.readTrip(by: tripID) { [weak self] tripModel in
+			guard let self = self else { return }
+			self.tripModel = tripModel
+			
+			guard let tripModel = tripModel else { return }
+			self.backgroundImageView.image = tripModel.image
+			self.tableView.reloadData()
+		}
+	}
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true)
@@ -60,7 +64,13 @@ class ActivitiesViewController: UIViewController {
 	}
 	
 	func handleAddDay(action: UIAlertAction) {
-		let vc = AddDayViewController.getInstance()
+		let vc = AddDayViewController.getInstance() as! AddDayViewController
+		vc.tripIndex = Data.tripModels.firstIndex { $0.id == tripID }
+		vc.doneSaving = { [weak self] dayModel in
+			let index = [self?.tripModel?.dayModels.count ?? 0]
+			self?.tripModel?.dayModels.append(dayModel)
+			self?.tableView.insertSections(IndexSet(index), with: .automatic)
+		}
 		present(vc, animated: true)
 	}
 	

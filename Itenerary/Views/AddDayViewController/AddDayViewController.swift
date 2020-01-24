@@ -18,8 +18,8 @@ class AddDayViewController: UIViewController {
 	
 	
 	/// A callback that the presenting view controller should implement in its `prepare(for:sender:)` function.
-	var doneSaving: (() -> ())?
-	var tripIndexToEdit: Int?
+	var doneSaving: ((DayModel) -> ())?
+	var tripIndex: Int!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,14 +34,11 @@ class AddDayViewController: UIViewController {
 	@IBAction func save(_ sender: UIButton) {
 		guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
 		
-//		if let index = tripIndexToEdit {
-//			TripFunctions.updateTrip(at: index, title: newTripName, image: imageView.image)
-//		} else {
-//			TripFunctions.createTrip(TripModel(title: newTripName, image: imageView.image))
-//		}
+		let dayModel = DayModel(title: newTitle, subtitle: subtitleTextField.text ?? "", data: nil)
+		DayFunctions.createDay(dayModel, forTripAt: tripIndex)
 		
 		if let doneSaving = doneSaving {
-			doneSaving()
+			doneSaving(dayModel)
 		}
 		dismiss(animated: true)
 	}
