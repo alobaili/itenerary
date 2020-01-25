@@ -21,6 +21,8 @@ class AddActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		titleLabel.font = UIFont(name: Theme.mainFontName, size: 24)
+		dayPickerView.dataSource = self
+		dayPickerView.delegate = self
     }
 	
 	@IBAction func save(_ sender: UIButton) {
@@ -31,4 +33,24 @@ class AddActivityViewController: UIViewController {
 		dismiss(animated: true)
 	}
 
+}
+
+extension AddActivityViewController: UIPickerViewDataSource {
+	
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return tripModel.dayModels.count
+	}
+	
+}
+
+extension AddActivityViewController: UIPickerViewDelegate {
+	
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return tripModel.dayModels[row].title.mediumDate
+	}
+	
 }
