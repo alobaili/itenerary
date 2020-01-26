@@ -14,6 +14,7 @@ class AddActivityViewController: UIViewController {
 	@IBOutlet weak var dayPickerView: UIPickerView!
 	@IBOutlet weak var titleTextField: UITextField!
 	@IBOutlet weak var subtitleTextField: UITextField!
+	@IBOutlet var activityTypeButtons: [UIButton]!
 	
 	var tripIndex: Int!
 	var tripModel: TripModel!
@@ -25,8 +26,23 @@ class AddActivityViewController: UIViewController {
 		dayPickerView.delegate = self
     }
 	
+	@IBAction func activityTypeSelected(_ sender: UIButton) {
+		activityTypeButtons.forEach { $0.tintColor = Theme.accent }
+		sender.tintColor = Theme.tintColor
+	}
+	
 	@IBAction func save(_ sender: UIButton) {
+		let activityType: ActivityType = getSelectedActivityType()
 		dismiss(animated: true)
+	}
+	
+	func getSelectedActivityType() -> ActivityType {
+		for (index, button) in activityTypeButtons.enumerated() {
+			if button.tintColor == Theme.tintColor {
+				return ActivityType(rawValue: index) ?? .excursion
+			}
+		}
+		return .excursion
 	}
 	
 	@IBAction func cancel(_ sender: UIButton) {

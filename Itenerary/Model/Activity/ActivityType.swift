@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum ActivityType {
+enum ActivityType: Int {
     case auto, excursion, flight, food, hotel
 }
