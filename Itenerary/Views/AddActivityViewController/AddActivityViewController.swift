@@ -16,6 +16,8 @@ class AddActivityViewController: UIViewController {
 	@IBOutlet weak var subtitleTextField: UITextField!
 	@IBOutlet var activityTypeButtons: [UIButton]!
 	
+	/// A callback that the presenting view controller should implement in its `prepare(for:sender:)` function.
+	var doneSaving: ((ActivityModel, Int) -> ())?
 	var tripIndex: Int!
 	var tripModel: TripModel!
 
@@ -32,7 +34,14 @@ class AddActivityViewController: UIViewController {
 	}
 	
 	@IBAction func save(_ sender: UIButton) {
+		guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
 		let activityType: ActivityType = getSelectedActivityType()
+		let dayIndex = dayPickerView.selectedRow(inComponent: 0)
+		let activityModel = ActivityModel(title: newTitle, subtitle: subtitleTextField.text ?? "", activityType: activityType)
+		ActivityFunctions.createActivity(activityModel, forTripAt: tripIndex, andDayAt: dayIndex)
+		if let doneSaving = doneSaving {
+			doneSaving(activityModel, dayIndex)
+		}
 		dismiss(animated: true)
 	}
 	

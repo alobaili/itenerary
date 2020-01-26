@@ -14,6 +14,7 @@
 		4B1A608623DB51D400C2DA70 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608523DB51D400C2DA70 /* UIViewControllerExtension.swift */; };
 		4B1A608823DB558D00C2DA70 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608723DB558D00C2DA70 /* UITextFieldExtension.swift */; };
 		4B1A608A23DB6F2A00C2DA70 /* DayFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A608923DB6F2A00C2DA70 /* DayFunctions.swift */; };
+		4B1B1A9B23DDDD0000A63D3A /* ActivityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1A9A23DDDD0000A63D3A /* ActivityFunctions.swift */; };
 		4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */; };
 		4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A623C23C8D003C6D43 /* AppDelegate.swift */; };
 		4B4998A923C23C8D003C6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4998A823C23C8D003C6D43 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 		4B1A608523DB51D400C2DA70 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4B1A608723DB558D00C2DA70 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		4B1A608923DB6F2A00C2DA70 /* DayFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFunctions.swift; sourceTree = "<group>"; };
+		4B1B1A9A23DDDD0000A63D3A /* ActivityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFunctions.swift; sourceTree = "<group>"; };
 		4B39703E23D4E5490089793A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4B4998A323C23C8D003C6D43 /* Itenerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itenerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4998A623C23C8D003C6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				4BB53E7D23D3A87A00EC3CC0 /* ActivityModel.swift */,
 				4BB53E7F23D3A95900EC3CC0 /* ActivityType.swift */,
+				4B1B1A9A23DDDD0000A63D3A /* ActivityFunctions.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				4B1A608823DB558D00C2DA70 /* UITextFieldExtension.swift in Sources */,
 				4B1A608423DB4A1600C2DA70 /* AddDayViewController.swift in Sources */,
 				4B4998A723C23C8D003C6D43 /* AppDelegate.swift in Sources */,
+				4B1B1A9B23DDDD0000A63D3A /* ActivityFunctions.swift in Sources */,
 				4B1A607623D8BF3E00C2DA70 /* ActivityTableViewCell.swift in Sources */,
 				4BF48E4423DB7F4500C033B6 /* DateExtension.swift in Sources */,
 				4B39703F23D4E5490089793A /* HeaderTableViewCell.swift in Sources */,
