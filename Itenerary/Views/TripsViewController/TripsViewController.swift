@@ -10,7 +10,8 @@ import UIKit
 
 class TripsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var logoImageView: UIImageView!
+	@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet var helpView: UIVisualEffectView!
     
@@ -36,6 +37,15 @@ class TripsViewController: UIViewController {
         
         view.backgroundColor = Theme.backgroundColor
         addButton.createFloatingActionButton()
+		
+		// x° × π/180 = y rad
+		let radians: CGFloat = 200 * CGFloat.pi / 180
+		
+		UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseIn], animations: {
+			self.logoImageView.alpha = 0
+			self.logoImageView.transform = CGAffineTransform(rotationAngle: radians)
+				.scaledBy(x: 3, y: 3)
+		})
         
     }
     
