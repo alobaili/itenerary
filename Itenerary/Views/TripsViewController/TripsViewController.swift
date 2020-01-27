@@ -17,23 +17,12 @@ class TripsViewController: UIViewController {
     
     var tripIndexToEdit: Int?
     var seenHelpView = "seenHelpView"
-    
-    override func viewDidLoad() {
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        TripFunctions.readTrips { [unowned self] in
-            self.tableView.reloadData()
-            
-            if !Data.tripModels.isEmpty {
-                if !UserDefaults.standard.bool(forKey: self.seenHelpView) {
-                    self.view.addSubview(self.helpView)
-                    self.helpView.frame = self.view.bounds
-                }
-            }
-        }
         
         view.backgroundColor = Theme.backgroundColor
         addButton.createFloatingActionButton()
@@ -45,9 +34,24 @@ class TripsViewController: UIViewController {
 			self.logoImageView.alpha = 0
 			self.logoImageView.transform = CGAffineTransform(rotationAngle: radians)
 				.scaledBy(x: 3, y: 3)
-		})
+		}) { animationCompleted in
+			self.getTripData()
+		}
         
     }
+	
+	fileprivate func getTripData() {
+		TripFunctions.readTrips { [unowned self] in
+			self.tableView.reloadData()
+			
+			if !Data.tripModels.isEmpty {
+				if !UserDefaults.standard.bool(forKey: self.seenHelpView) {
+					self.view.addSubview(self.helpView)
+					self.helpView.frame = self.view.bounds
+				}
+			}
+		}
+	}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddTripSegue" {
