@@ -20,12 +20,34 @@ class AddActivityViewController: UITableViewController {
 	var doneSaving: ((ActivityModel, Int) -> ())?
 	var tripIndex: Int!
 	var tripModel: TripModel!
+	
+	// For editing activity
+	var dayIndexToEdit: Int?
+	var activityModelToEdit: ActivityModel!
+	var doneUpdating: ((Int, Int, ActivityModel) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		titleLabel.font = UIFont(name: Theme.mainFontName, size: 24)
 		dayPickerView.dataSource = self
 		dayPickerView.delegate = self
+		
+		if let dayIndex = dayIndexToEdit, let activityModel = activityModelToEdit {
+			// Update Activity: populate the popup
+			titleLabel.text = "Edit Activity"
+			
+			// Select the day in the picker view
+			dayPickerView.selectRow(dayIndex, inComponent: 0, animated: true)
+			
+			// Populate the activity data
+			// Set the selected activity type button
+			activityTypeSelected(activityTypeButtons[activityModel.activityType.rawValue])
+			titleTextField.text = activityModel.title
+			subtitleTextField.text = activityModel.subtitle
+		} else {
+			// New Activity: Set default values
+			activityTypeSelected(activityTypeButtons[ActivityType.excursion.rawValue])
+		}
     }
 	
 	@IBAction func activityTypeSelected(_ sender: UIButton) {
@@ -36,12 +58,28 @@ class AddActivityViewController: UITableViewController {
 	@IBAction func save(_ sender: UIButton) {
 		guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
 		let activityType: ActivityType = getSelectedActivityType()
-		let dayIndex = dayPickerView.selectedRow(inComponent: 0)
-		let activityModel = ActivityModel(title: newTitle, subtitle: subtitleTextField.text ?? "", activityType: activityType)
-		ActivityFunctions.createActivity(activityModel, forTripAt: tripIndex, andDayAt: dayIndex)
-		if let doneSaving = doneSaving {
-			doneSaving(activityModel, dayIndex)
+		let newDayIndex = dayPickerView.selectedRow(inComponent: 0)
+		
+		if activityModelToEdit != nil {
+			// Update activity
+			activityModelToEdit.activityType = activityType
+			activityModelToEdit.title = newTitle
+			activityModelToEdit.subtitle = subtitleTextField.text ?? ""
+			
+			ActivityFunctions.updateActivity(activityModelToEdit, forTripAt: tripIndex, oldDayIndex: dayIndexToEdit!, newDayIndex: newDayIndex)
+			
+			if let doneUpdating = doneUpdating, let oldDayIndex = dayIndexToEdit {
+				doneUpdating(oldDayIndex, newDayIndex, activityModelToEdit)
+			}
+		} else {
+			// New Activity
+			let activityModel = ActivityModel(title: newTitle, subtitle: subtitleTextField.text ?? "", activityType: activityType)
+			ActivityFunctions.createActivity(activityModel, forTripAt: tripIndex, andDayAt: newDayIndex)
+			if let doneSaving = doneSaving {
+				doneSaving(activityModel, newDayIndex)
+			}
 		}
+		
 		dismiss(animated: true)
 	}
 	

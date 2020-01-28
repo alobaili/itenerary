@@ -153,4 +153,53 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
 		
 		return UISwipeActionsConfiguration(actions: [deleteAction])
 	}
+	
+	func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool) -> Void) in
+			let vc = AddActivityViewController.getInstance() as! AddActivityViewController
+			
+			// Which trip are we on?
+			vc.tripModel = self.tripModel
+			
+			// Which trip are we working with?
+			vc.tripIndex = self.getTripIndex()
+			
+			// Which day are we on?
+			vc.dayIndexToEdit = indexPath.section
+			
+			// Which activity are we editing?
+			vc.activityModelToEdit = self.tripModel.dayModels[indexPath.section].activityModels[indexPath.row]
+			
+			// What do we want to happen after the activity is saved?
+			vc.doneUpdating = { [weak self] oldDayIndex, newDayIndex, activityModel in
+				let oldActivityIndex = (self?.tripModel.dayModels[oldDayIndex].activityModels.firstIndex(of: activityModel))!
+				if oldDayIndex == newDayIndex {
+					// 1. Update the local table data
+					self?.tripModel.dayModels[newDayIndex].activityModels[oldActivityIndex] = activityModel
+					// 2. Refresh just that row
+					let indexPath = IndexPath(row: oldActivityIndex, section: newDayIndex)
+					tableView.reloadRows(at: [indexPath], with: .automatic)
+				} else {
+					// Activity moved to a different day
+					// 1. Remove activity from local table data
+					self?.tripModel.dayModels[oldDayIndex].activityModels.remove(at: oldActivityIndex)
+					// 2. Insert activity into new location
+					let lastIndex = (self?.tripModel.dayModels[newDayIndex].activityModels.count)!
+					self?.tripModel.dayModels[newDayIndex].activityModels.insert(activityModel, at: lastIndex)
+					// 3. Update table rows
+					tableView.performBatchUpdates({
+						tableView.deleteRows(at: [indexPath], with: .automatic)
+						let insertIndexPath = IndexPath(row: lastIndex, section: newDayIndex)
+						tableView.insertRows(at: [insertIndexPath], with: .automatic)
+					})
+				}
+			}
+			self.present(vc, animated: true)
+			actionPerformed(true)
+		}
+		edit.image = UIImage(systemName: "pencil")
+		edit.backgroundColor = Theme.editColor
+		return UISwipeActionsConfiguration(actions: [edit])
+	}
+	
 }
