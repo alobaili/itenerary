@@ -74,7 +74,7 @@ class ActivitiesViewController: UIViewController {
 		present(vc, animated: true)
 	}
 	
-	fileprivate func getTripIndex() -> Int? {
+	fileprivate func getTripIndex() -> Int! {
 		return Data.tripModels.firstIndex { $0.id == tripID }
 	}
 	
@@ -124,4 +124,33 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return sectionHeaderHeight
     }
+	
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		
+		let activityModel = tripModel.dayModels[indexPath.section].activityModels[indexPath.row]
+		
+		let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, actionPerformed: @escaping (Bool) -> Void) in
+			
+			let alertController = UIAlertController(title: "Delete Activity", message: "Are you sure you want to delete the activity: \(activityModel.title)", preferredStyle: .alert)
+			
+			let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+				actionPerformed(false)
+			}
+			let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+				ActivityFunctions.deleteActivity(activityModel, forTripAt: self.getTripIndex(), andDayAt: indexPath.section)
+				self.tripModel.dayModels[indexPath.section].activityModels.remove(at: indexPath.row)
+				tableView.deleteRows(at: [indexPath], with: .automatic)
+				actionPerformed(true)
+			}
+			
+			alertController.addAction(cancelAction)
+			alertController.addAction(deleteAction)
+			
+			self.present(alertController, animated: true)
+		}
+		
+		deleteAction.image = UIImage(systemName: "xmark")
+		
+		return UISwipeActionsConfiguration(actions: [deleteAction])
+	}
 }
