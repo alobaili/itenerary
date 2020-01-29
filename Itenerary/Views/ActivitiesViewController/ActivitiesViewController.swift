@@ -90,6 +90,12 @@ class ActivitiesViewController: UIViewController {
 		}
 		present(vc, animated: true)
 	}
+	
+	@IBAction func toggleEditMode(_ sender: UIBarButtonItem) {
+		tableView.isEditing.toggle()
+		sender.title = tableView.isEditing ? "Done" : "Edit"
+	}
+	
     
 }
 
@@ -200,6 +206,24 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
 		edit.image = UIImage(systemName: "pencil")
 		edit.backgroundColor = Theme.editColor
 		return UISwipeActionsConfiguration(actions: [edit])
+	}
+	
+	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		// 1. Get the current activity
+		let activityModel = tripModel.dayModels[sourceIndexPath.section].activityModels[sourceIndexPath.row]
+		
+		// 2. Delete activity from old location
+		tripModel.dayModels[sourceIndexPath.section].activityModels.remove(at: sourceIndexPath.row)
+		
+		// 3. Insert activity into the new location
+		tripModel.dayModels[destinationIndexPath.section].activityModels.insert(activityModel, at: destinationIndexPath.row)
+		
+		// 4. Update the data store
+		ActivityFunctions.reorderActivity(activityModel, forTripAt: getTripIndex(), oldDayIndex: sourceIndexPath.section, newDayIndex: destinationIndexPath.section, newActivityIndex: destinationIndexPath.row)
 	}
 	
 }

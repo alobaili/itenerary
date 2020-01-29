@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Activities View Controller-->
+        <!--Title-->
         <scene sceneID="c6z-Xd-LCd">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="OAH-Zl-aW8" customClass="ActivitiesViewController" customModule="Itenerary" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +162,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8YT-5p-bvc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nbb-Q0-hZb"/>
+                    <navigationItem key="navigationItem" title="Title" id="nyN-nu-Lbt">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="STO-G6-0kJ">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="OAH-Zl-aW8" id="ldd-cY-h4w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="o0H-qd-Yyr" id="5s9-AJ-rLc"/>
                         <outlet property="backgroundImageView" destination="2Jy-mc-SJ8" id="1Gg-zk-qBi"/>
